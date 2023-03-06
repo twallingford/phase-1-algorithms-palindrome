@@ -5,18 +5,12 @@ function isPalindrome(word) {
   let match = 0;
 
   for(const oLetter in originalWordArray){
-    if(originalWordArray[oLetter] === reversedWordArray[oLetter]){
-      match++;
+    if(originalWordArray[oLetter] != reversedWordArray[oLetter]){
+      return false;
     }
   }
 
-  if(match === originalWordArray.length){
-    return true;
-  }
-  else{
-    return false;
-  }
-
+  return true;
 }
 
 /*
