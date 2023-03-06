@@ -2,8 +2,6 @@ function isPalindrome(word) {
   const reversedWordArray = word.split("").reverse();
   const originalWordArray = word.split("");
 
-  let match = 0;
-
   for(const oLetter in originalWordArray){
     if(originalWordArray[oLetter] != reversedWordArray[oLetter]){
       return false;
@@ -40,6 +38,23 @@ function isPalindrome(word) {
       If so, return true
       If not, return false
 
+*/
+
+/*
+Explaining the solution
+
+I changed a few things from the pseudocode initially and then I changed it even more from that.
+In the end, I ended up with two variables because there was no need to hold the word, then split it, then reverse it all in three steps.
+Plus the reverse was also reversing the original, which I didn't know about. 
+
+I orignally couldn't figure out how to compare the letters while also keeping the if/else and returns all in the for loop so I just made a 
+new variable ("match") to keep "score" of how many successes there were in the loop. Then I had an if/else outside of the for loop that just 
+compared the match amount to the length of the arrays and if they were the same then it was true. If not, it was false.
+
+Then I realized that was a bad idea and I shouldn't be thinking about the true statement first. Rather, I figured that there just needed to be
+ONE failure to return false. So, in the for loop, I added the false criteria and only the false criteria. If it ever activated that if statement, 
+we knew it would be false. But if it exited the for loop without activating it, we could be certain it was true, so I put the true return function
+outside of the for loop.
 */
 
 // You can run `node index.js` to view these console logs
